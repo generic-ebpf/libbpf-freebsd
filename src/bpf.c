@@ -346,12 +346,6 @@ bpf_verify_program(enum bpf_prog_type type, const struct bpf_insn *insns,
 int
 bpf_map_lookup_elem_flags(int fd, const void *key, void *value, __u64 flags)
 {
-	struct ebpf_map_lookup_req req;
-
-	req.fd = fd;
-	req.key = (void *)key;
-	req.value = value;
-	req.flags = flags;
-
-	return ebpf_ioctl(EBPFIOC_MAP_LOOKUP_ELEM, &req);
+	NOT_IMPLEMENTED;
+	return -ENOTSUP;
 }
